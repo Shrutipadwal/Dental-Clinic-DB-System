@@ -1,0 +1,155 @@
+Backup & Restore Documentation
+
+---
+
+#1. Database Used
+
+dental_clinic_db
+
+
+This database contains the following tables:
+
+* patients
+* dentists
+* appointments
+* treatments
+* billing
+
+---
+
+#2. Backup Process (MySQL Workbench)
+
+## ✔ Method Used: Dump Project Folder
+
+### Steps followed:
+
+1. Opened MySQL Workbench
+2. Navigated to:
+
+   ```
+   Server → Data Export
+   ```
+3. Selected database:
+
+   ```
+   dental_clinic_db
+   ```
+4. Chose option:
+
+   ```
+   Export to Dump Project Folder
+   ```
+5. Selected folder location:
+
+   ```
+   C:\Users\Dell\Documents\dumps\dental_backup\
+   ```
+6. Clicked:
+
+   ```
+   Start Export
+   ```
+
+---
+
+## Output Generated: (in the folder you can check)
+
+A folder containing multiple `.sql` files:
+
+* dental_clinic_db_patients.sql
+* dental_clinic_db_dentists.sql
+* dental_clinic_db_appointments.sql
+* dental_clinic_db_treatments.sql
+* dental_clinic_db_billing.sql
+
+---
+
+# 3. Restore Process (MySQL Workbench)
+
+## ✔ Method Used: Dump Project Folder Import
+
+### Steps followed:
+
+1. Opened MySQL Workbench
+2. Navigated to:
+
+   ```
+   Server → Data Import
+   ```
+3. Selected option:
+
+   ```
+   Import from Dump Project Folder
+   ```
+4. Selected folder:
+
+   ```
+   C:\Users\Dell\Documents\dumps\dental_backup\
+   ```
+5. Selected target schema:
+
+   ```
+   dental_clinic_db
+   ```
+6. Clicked:
+
+   ```
+   Start Import
+   ```
+⚠️ Note:
+Make sure the database dental_clinic_db already exists before importing the backup.
+The import process only restores the tables, structure, and data inside the existing database.
+---
+
+## ✔ Result:
+
+* All tables were successfully recreated
+* Data was restored properly
+* Relationships and constraints were preserved
+
+---
+
+# 4. Alternative Backup Method
+
+## ✔ Self-Contained File Method
+
+Instead of a folder, MySQL also allows:
+
+### Export:
+
+* Single `.sql` file is generated
+  Example:
+
+```
+dental_backup.sql
+```
+
+### Restore:
+
+```bash
+mysql -u root -p dental_clinic_db < dental_backup.sql
+```
+
+OR via Workbench:
+
+* Import → Self-contained file → Select `.sql`
+
+---
+
+# 5. Key Learnings
+
+* Dump Project Folder creates multiple SQL files (table-wise backup)
+* Self-Contained File creates a single portable backup file
+* Database must exist before restoring backup
+* Both methods ensure safe recovery of data
+* Backup and restore are essential DBA operations for data safety
+
+---
+
+In addition to these, MySQL also provides other backup options such as command-line tools (`mysqldump`) and automated backup strategies depending on system requirements.
+
+---
+
+# END OF DOCUMENT
+
+---
