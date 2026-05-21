@@ -37,6 +37,7 @@ dental_clinic_db
 ## 🔗 SQL Concepts Used
 
 - INSERT, SELECT, UPDATE, DELETE
+- CONSTRAINTS
 - INNER JOIN
 - LEFT JOIN
 - GROUP BY & HAVING
