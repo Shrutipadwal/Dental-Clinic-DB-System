@@ -82,7 +82,7 @@ A trigger was implemented to automatically set default values for appointment st
 
 ## 🎯 Objective
 
-## The main objective of this project is to simulate a real-world healthcare database system that demonstrates efficient data management using SQL, including operations such as data insertion, retrieval, updating, deletion, and relationship handling between multiple tables.
+The main objective of this project is to simulate a real-world healthcare database system that demonstrates efficient data management using SQL, including operations such as data insertion, retrieval, updating, deletion, and relationship handling between multiple tables.
 
 ## 🚀 Key Learning Outcomes
 
